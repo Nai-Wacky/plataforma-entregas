@@ -9,6 +9,13 @@ from entregas.reglas import elegir_medio
 def hola(request):
     return HttpResponse("Hola. Plataforma de entregas (aún sin pedidos).")
 
+def estado(request):
+    return JsonResponse({
+        "status": "ok", 
+        "Servicio": "Plataforma de entregas", 
+        "versión": "1.0",
+        "Propietario": "Ricardo Hernández",
+        "mensaje": "Plataforma de entregas (aún sin pedidos)."})
 
 def cotizar(request):
     try:
