@@ -18,6 +18,4 @@ def cotizar(request):
         return JsonResponse({"error": "Valores inválidos para km o kg"}, status=400)
 
     medio = elegir_medio(km, kg)
-    if isinstance(medio, JsonResponse):
-        return medio
     return JsonResponse({"mensaje": f"Cotización de entrega (aún sin pedidos). Medio de transporte: {medio}."})
